@@ -2,7 +2,9 @@
 
 ### This is a simple chat application built to explore the world of live chat
 
-### This app is built with NodeJS (Fastify), Redis, TypeScript, Docker, and used Caddy for reverse proxy. In the frontend it is NextJS 13
+## Technologies Used
+
+This app is built with NodeJS (Fastify), Redis, TypeScript, Docker, and used Caddy for reverse proxy. In the frontend it is NextJS 13
 
 ## Screenshots
 
