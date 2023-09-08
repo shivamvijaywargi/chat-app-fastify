@@ -42,6 +42,7 @@ export default function Home() {
   const messageListRef = useRef<HTMLOListElement | null>(null);
 
   const [newMessage, setNewMessage] = useState('');
+  const [connectionCount, setConnectionCount] = useState(0);
   const [messages, setMessages] = useState<Array<IMessage>>([]);
 
   const socket = useSocket();
@@ -65,6 +66,13 @@ export default function Home() {
         scrollToBottom();
       }, 0);
     });
+
+    socket?.on(
+      CONNECTION_COUNT_UPDATED_CHANNEL,
+      ({ count }: { count: number }) => {
+        setConnectionCount(count);
+      }
+    );
   }, [socket]);
 
   const handleSubmit = (e: FormEvent) => {
@@ -79,7 +87,9 @@ export default function Home() {
 
   return (
     <main className="flex flex-col p-4 w-full max-w-3xl m-auto">
-      <h1 className="text-4xl font-bold text-center mb-4">Chat</h1>
+      <h1 className="text-4xl font-bold text-center mb-4">
+        Chat ({connectionCount})
+      </h1>
 
       <ol
         className="flex-1 overflow-y-scroll overflow-x-hidden"
