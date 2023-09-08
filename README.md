@@ -1,6 +1,6 @@
 # Simple Chat app
 
-### This is a simple chat application built to explore the world of live chat
+### This is a simple chat application built to explore the world of live chat and learn sockets
 
 ## Technologies Used
 
